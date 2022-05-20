@@ -1,0 +1,101 @@
+.fb-modal .files-container {
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.fb-item {
+    width: 48px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.fb-item:hover {
+    background-color: #6c6c6c75;
+}
+
+.fb-item-icon {
+    margin: 4px;
+}
+
+.fb-item-name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 12px;
+    margin: 0 2px;
+}
+
+.fb-context-menu {
+    background-color: #e8e8e8;
+    border-radius: 5px;
+    width: 150px;
+    position: absolute;
+    z-index: 10000;
+    display: none;
+}
+
+.fb-context-menu-item:first-child {
+    border-radius: 5px 5px 0 0;
+}
+
+.fb-context-menu-item {
+    padding: 5px;
+}
+
+.fb-context-menu-item:last-child {
+    border-radius: 0 0 5px 5px;
+}
+
+.fb-context-menu-item:hover {
+    background-color: #bbbbbb;
+    cursor: pointer;
+}
+
+.fb-file-input {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.object-field .preloader {
+    display: none;
+    position: absolute;
+    top: calc(50% - 80px);
+    left: calc(50% - 40px);
+}
+
+.img-prev {
+    margin-top: 5px;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+  

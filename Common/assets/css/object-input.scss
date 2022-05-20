@@ -1,0 +1,38 @@
+.object-field:not(:first-child) {
+    margin-top: 10px;
+}
+
+.object-form-container {
+    padding: 15px 15px 15px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+}
+
+.object-array-label-row {
+    display: flex;
+    align-items: center;
+}
+
+.add-item-btn {
+    margin: 5px;
+    cursor: pointer;
+}
+
+.array-item-dropable {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 38px;
+}
+
+.array-item-dropable-active {
+    border: solid;
+}

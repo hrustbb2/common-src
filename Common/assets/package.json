@@ -1,0 +1,15 @@
+{
+  "name": "company-form",
+  "description": "Common admin panel",
+  "version": "1.0.0",
+  "author": "hrustbb2",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@types/jquery": "^3.3.30",
+    "@types/node": "^12.6.9",
+    "bootstrap": "^4.5.3",
+    "bootstrap-icons": "^1.2.2",
+    "font-awesome": "^4.7.0"
+  }
+}
