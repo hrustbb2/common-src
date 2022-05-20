@@ -1,6 +1,20 @@
 # Общий функционал для админ-панели и некоторых частей модулей.
 
-Подключение в ```ModulesProvider.php```:
+Клонируем ```git clone https://github.com/hrustbb2/common-src.git ./src```
+
+В ```composer.json``` добавляем строчку ```"Src\\": "src/",```:
+```
+"autoload": {
+    "psr-4": {
+        "App\\": "app/",
+        "Src\\": "src/",
+        "Database\\Factories\\": "database/factories/",
+        "Database\\Seeders\\": "database/seeders/"
+    }
+},
+```
+
+Обратите внимание на строки в ```ModulesProvider.php```:
 ```
 use Src\Common\Interfaces\IModulesProvider as ICommonProvider;
 use Src\Common\Interfaces\IFactory as ICommonFactory;
@@ -23,6 +37,8 @@ class ModulesProvider implements ICommonProvider {
 
 }
 ```
+Примерно так сюда подключается большинство модулей.
+
 Подключение в routes/web.php (для Laravel)
 ```
 require __DIR__ . '/../src/Common/Laravel/routes.php';
