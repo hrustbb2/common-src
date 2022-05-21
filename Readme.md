@@ -14,6 +14,19 @@
 },
 ```
 
+В ```app/Providers/AppServiceProvider.php``` добавляем:
+```
+const ADMIN_MODULES = 'admin_modules';
+
+public function boot()
+{
+    $this->loadViewsFrom(__DIR__ . '/../../src/views', 'common');
+    $this->app->singleton(self::ADMIN_MODULES, function ($app) {
+        return new AdminModulesProvider();
+    });
+}
+```
+
 Обратите внимание на строки в ```ModulesProvider.php```:
 ```
 use Src\Common\Interfaces\IModulesProvider as ICommonProvider;
