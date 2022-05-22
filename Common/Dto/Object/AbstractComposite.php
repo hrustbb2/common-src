@@ -62,4 +62,9 @@ abstract class AbstractComposite extends AbstractObject {
 
     abstract public function init();
 
+    public function onSave(): void
+    {
+        
+    }
+
 }
