@@ -28,22 +28,24 @@ class Migrations implements IMigrations
         $this->manager->init();
 
         $this->creator = new MigrationCreator();
-        $this->creator->setMigrationPath(__DIR__ . '/../migrations');
     }
 
-    public function create(): void
+    public function create(string $migrationsPath): void
     {
+        $this->creator->setMigrationPath($migrationsPath);
         $this->creator->create('Migration');
     }
 
-    public function migrate(): void
+    public function migrate(string $migrationsPath): void
     {
+        $this->creator->setMigrationPath($migrationsPath);
         $migrations = $this->manager->getNewMigrations();
         $this->manager->migrate($migrations);
     }
 
-    public function rollback(): void
+    public function rollback(string $migrationsPath): void
     {
+        $this->creator->setMigrationPath($migrationsPath);
         $this->manager->rollback();
     }
 

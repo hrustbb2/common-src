@@ -79,8 +79,9 @@ class ModulesProvider implements ICommonProvider, ISidebarProvider, IJSONProvide
                 ],
                 IJSONFactory::OBJECTS_FACTORY => $objFactory,
                 IJSONFactory::OBJECTS_TABLE => 'json_obj_items',
+                IJSONFactory::DIRS_TABLE => 'json_obj_dirs',
             ]);
-            $dirTreeFactory = $this->createDirTreeFactory('json_obj_dirs');
+            $dirTreeFactory = $this->createDirTreeFactory($this->jsonFactory->getSetting(IJSONFactory::DIRS_TABLE));
             $this->jsonFactory->setDirsTreeFactory($dirTreeFactory);
             $this->jsonFactory->injectModules($this);
         }
