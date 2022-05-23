@@ -10,7 +10,9 @@ use hrustbb2\arrayproc\ArrayProcessor;
 
 class Query implements IQuery {
 
-    use TraitSqlQuery;
+    use TraitSqlQuery {
+        TraitSqlQuery::getSelectSection as baseGetSelectSection;
+    }
 
     protected string $tableName;
 
@@ -29,6 +31,16 @@ class Query implements IQuery {
     {
         $this->queryBuilder = DB::table($this->tableName);
         $this->isParentJoined = false;
+    }
+
+    protected function getSelectSection(array $fields, array $allowFields, string $table, string $prefix = ''): array
+    {
+        $segments = $this->baseGetSelectSection($fields, $allowFields, $table, $prefix);
+        $result = [];
+        foreach($segments as $field=>$alias){
+            $result[] = $field . ' AS ' . $alias;
+        }
+        return $result;
     }
 
     public function select(array $fields)

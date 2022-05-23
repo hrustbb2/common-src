@@ -21,11 +21,11 @@ trait TraitSqlQuery {
         }
         foreach ($fields as $field){
             $alias = '';
-            if($prefix && in_array($field, $allowFields)){
-                $alias = ' AS ' . $prefix . $field;
+            if($prefix){
+                $alias = $prefix . $field;
             }
             if(in_array($field, $allowFields)){
-                $result[] = $table . '.' . $field . $alias;
+                $result[$table . '.' . $field] = $alias;
             }
         }
         return $result;
