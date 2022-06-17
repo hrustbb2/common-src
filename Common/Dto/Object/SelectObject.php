@@ -47,4 +47,9 @@ class SelectObject extends AbstractObject {
         ];
     }
 
+    public function setValue($value): void
+    {
+        $this->value = $value;
+    }
+
 }

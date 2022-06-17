@@ -36,4 +36,9 @@ class ColorObject extends AbstractObject {
         return $this->value;
     }
 
+    public function setValue($value): void
+    {
+        $this->value = $value;
+    }
+
 }
